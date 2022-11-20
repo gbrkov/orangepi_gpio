@@ -9,8 +9,8 @@ bus = smbus.SMBus(0)  # Rev 1 Pi uses 0
 def send_score(a, b):
   # call rest api tu push scores to web interface which put this score to video
   try:
-    header = {'Authorization' : '1eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.04dQgSziuwOVka7hyNgn05tcosSnRw7ARXarbVIgsHg', 'Content-type': 'application/json'}
-    response = requests.post('http://18.135.196.45:5080/KlaskApp/app/api/score', json = {"a": a,"b": b, "id": "uuid123"},  headers=header)
+    header = {'Authorization' : 'TOKEN', 'Content-type': 'application/json'}
+    response = requests.post('http://XXX.XXX.XXX.XXX:5080/KlaskApp/app/api/score', json = {"a": a,"b": b, "id": "uuid123"},  headers=header)
     print("sent: a:{}, b:{}, repsponse:{}", a, b, response.json())  
   except:
     print("Message send error")
